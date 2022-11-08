@@ -1,15 +1,19 @@
 package sit.int202.classicmodels.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "offices")
+@NamedQueries({
+        @NamedQuery(name = "Office.FIND_BY_CITY_OR_COUNTRY",
+                query = "select o from Office o where lower(o.city) like :city or lower(o.country) like :country")
+})
 public class Office {
 
         @Id
@@ -23,8 +27,6 @@ public class Office {
         private String phone;
         private String territory;
 
-     //   @OneToMany(mappedBy = "officeCode")
-     //   private List<Employee> employees;
-
-
+        @OneToMany(mappedBy = "officeCode")
+        private List<Employee> employees;
 }

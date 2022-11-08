@@ -1,4 +1,4 @@
-package sit.int202.classicmodels.entities;
+package sit.int202.classicmodels.repositories;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
