@@ -16,7 +16,7 @@ public class TestJPA {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("classic-models");
-        System.out.println((emf != null) ? "Database connection successfully" : "Something wrong, can't connect to database");
+        System.out.println((emf != null) ? "Database connection successfully" : "Oop!! Something wrong, can't connect to database");
         int choice = 0;
         do {
             choice = menu();
@@ -44,7 +44,7 @@ public class TestJPA {
         int x = (int) (Math.random()*99+7);
         Office newOffice = new Office();
         newOffice.setOfficeCode(String.valueOf(x));
-        newOffice.setAddressLine1("126 Pracha-Uthit, Bangmod");
+        newOffice.setAddressLine1("126 Pracha-Uthit, Bang mod");
         newOffice.setAddressLine2("Thungkru");
         newOffice.setCity("Bangkok");
         newOffice.setCountry("Thailand");
