@@ -23,7 +23,7 @@ public class ProductListServlet extends HttpServlet {
         request.setAttribute("page", page);
         request.setAttribute("pageSize", size);
         request.setAttribute("totalPage",totalPage);
-        System.out.println(totalPage);
+        System.out.println("Product: Page=" +page+" Size="+size);
         getServletContext().getRequestDispatcher("/product-list.jsp").forward(request, response);
     }
 

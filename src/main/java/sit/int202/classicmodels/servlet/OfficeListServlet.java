@@ -18,8 +18,10 @@ public class OfficeListServlet extends HttpServlet {
         String officeCode = request.getParameter("officeCode");
         if (officeCode != null) {
             request.setAttribute("selectedOffice", officeRepository.find(officeCode));
+            request.setAttribute("selected", officeCode);
         }
-        getServletContext().getRequestDispatcher("/OfficeList.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/office-list.jsp").forward(request, response);
+        System.out.println("Office: "+officeCode);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response){
