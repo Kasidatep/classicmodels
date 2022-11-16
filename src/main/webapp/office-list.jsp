@@ -35,10 +35,11 @@
     <c:if test="${selected!=null}">
     <hr>
         <h4>Employees ::</h4>
-    <div class="p-3">
+    <div class="p-3 office-employee-list">
         <c:forEach items="${selectedOffice.employees}" var="employee">
-                <span class="px-3 py-2 mx-3 my-2 bg-secondary bg-opacity-25 rounded-pill" style="line-height: 1;"> <i class="fa fa-user" aria-hidden="true"></i> <b>${employee.firstName} ${employee.lastName} </b> - ${employee.jobTitle}
-                </span>
+                <div class="px-3 py-2 mx-2 my-2 bg-secondary bg-opacity-25 rounded-pill" >
+                    <i class="fa fa-user" aria-hidden="true"></i> <b>${employee.firstName} ${employee.lastName} </b> - ${employee.jobTitle}
+                </div>
         </c:forEach>
     </div>
     </c:if>

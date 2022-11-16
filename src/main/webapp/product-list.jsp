@@ -18,7 +18,7 @@
             xmlHttp.onload = function () {
                 document.getElementById("body-content").innerHTML = xmlHttp.responseText;
             }
-            xmlHttp.open("GET", "ProductList?page=" + page + "&size=" + pageSize);
+            xmlHttp.open("GET", "product-list?page=" + page + "&size=" + pageSize);
             xmlHttp.send();
         }
     </script>
@@ -27,9 +27,10 @@
 <jsp:include page="componance/navBar.jsp"/>
 <div class="nav-space"></div>
 <div class="container">
-    <div class="row pt-4 align-items-center">
+    <div class="flex-product">
+<%--        //class="row pt-4 align-items-center">--%>
         <c:forEach items="${products}" var="p" varStatus="vs">
-            <div class="col-2 my-1 mx-3">
+            <div class="col col-first my-1 mx-2">
                 <div class="card">
                     <img src="model-images/${p.productLine}/${p.productCode}.jpg" class="card-img-top product-img"
                          alt="${p.productName}">
@@ -39,7 +40,7 @@
                     </p>
                     <div class="card-body">
                         <h5 class="card-title text-truncate tooltips"
-                            style="max-width: 170px;"
+                            style="max-width: 220px;"
                             title="${p.productName}">
                                 ${p.productName}
                         </h5>
@@ -61,26 +62,26 @@
         <nav aria-label="paging">
             <ul class="pagination">
                 <li class="page-item ${page==1?"disabled":""}">
-                    <a class="page-link" href="ProductList?page=${page-1}&size=${pageSize}">Previous</a>
+                    <a class="page-link" href="product-list?page=${page-1}&size=${pageSize}">Previous</a>
                 </li>
                 <c:forEach begin="1" end="${totalPage}" varStatus="vs">
                     <c:choose>
                         <c:when test="${vs.count==page}">
                             <li class="page-item active" aria-current="page">
                                 <a class="page-link"
-                                   href="ProductList?page=${vs.count}&size=${pageSize}">${vs.count}</a>
+                                   href="product-list?page=${vs.count}&size=${pageSize}">${vs.count}</a>
                             </li>
                         </c:when>
                         <c:otherwise>
                             <li class="page-item">
                                 <a class="page-link"
-                                   href="ProductList?page=${vs.count}&size=${pageSize}">${vs.count}</a>
+                                   href="product-list?page=${vs.count}&size=${pageSize}">${vs.count}</a>
                             </li>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <li class="page-item ${page==totalPage?"disabled":""}">
-                    <a class="page-link" href="ProductList?page=${page+1}&size=${pageSize}">Next</a>
+                    <a class="page-link" href="product-list?page=${page+1}&size=${pageSize}">Next</a>
                 </li>
                 <a class="px-1 mx-2 div-link" onclick="loadProduct(page=${page>=totalPage?1:page+1}, ${pageSize})"></a>
                 <select id="itemsPage" class="form-select ml-2" onchange="loadProduct(1)">

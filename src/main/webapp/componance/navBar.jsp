@@ -11,7 +11,7 @@
                         <a class="nav-link text-white" href="office-list">Office</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="ProductList">Product</a>
+                        <a class="nav-link text-white" href="product-list">Product</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#" aria-disabled="true">Order History</a>
@@ -21,7 +21,7 @@
                     </li>
                 </ul>
             </div>
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" action="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-light" type="submit">Search</button>
                 </form>

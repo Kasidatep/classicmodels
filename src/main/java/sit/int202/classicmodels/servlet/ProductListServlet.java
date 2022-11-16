@@ -9,7 +9,7 @@ import sit.int202.classicmodels.repositories.ProductRepository;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProductListServlet", value = "/ProductList")
+@WebServlet(name = "ProductListServlet", value = "/product-list")
 public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
