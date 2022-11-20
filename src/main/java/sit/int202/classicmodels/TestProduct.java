@@ -16,7 +16,7 @@ public class TestProduct {
 //        query.setMaxResults(20);
         ProductRepository repository = new ProductRepository();
         System.out.println("No. of Product : "+repository.countAll());
-        List<Product> productList = repository.findAll(11,10);
+        List<Product> productList = repository.findAll(11);
         for(Product product : productList){
             System.out.println(product.getProductCode()+ ": " + product.getProductName());
         }

@@ -17,6 +17,7 @@
             crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/7e6e2fadf1.js"></script>
     <link href="componance/asset/style.css" rel="stylesheet">
+    <link href="componance/function.js" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="componance/navBar.jsp"/>
