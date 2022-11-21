@@ -136,7 +136,7 @@
 
 <div class="d-flex justify-content-center modal d-none" id="loading">
 
-    <button class="btn" type="button" disabled style="margin-top: 20%; width: 6rem; height: 6rem; background-color: white">
+    <button class="btn" type="button" disabled style="margin-top: 10%; width: 6rem; height: 6rem; background-color: white">
         <span class="spinner-border spinner-border-lg text-dark" role="status" aria-hidden="true"
               style="margin-top: 10%; width: 4rem; height: 4rem;"></span>
         <span class="visually-hidden">Loading...</span>
