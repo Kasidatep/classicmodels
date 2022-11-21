@@ -16,18 +16,17 @@
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/7e6e2fadf1.js"></script>
-    <link href="componance/asset/style.css" rel="stylesheet">
-    <link href="componance/function.js" rel="stylesheet">
+    <link href="components/asset/style.css" rel="stylesheet">
+    <link href="components/function.js" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="componance/navBar.jsp"/>
 <div class="nav-space"></div>
 <div class="container">
     <br>
         <h2>Classic Model Offices ::</h2>
     <div class="row">
         <c:forEach items="${offices}" var="office">
-            <a href="office-list?officeCode=${office.officeCode}" class="col-2 border border-secondary p-2 m-2 ${office.officeCode == selected ? 'btn btn-secondary' : 'btn btn-outline-secondary'}">
+            <a href="javascript:loadOffice('${office.officeCode}')" class="col-2 border border-secondary p-2 m-2 ${office.officeCode == selected ? 'btn btn-secondary' : 'btn btn-outline-secondary'}">
                 <div class="text-start">${office.city}, ${office.country} </div>
                 <div class="text-start"> <i class="fa fa-phone" aria-hidden="true"></i> ${office.phone}</div>
             </a>
