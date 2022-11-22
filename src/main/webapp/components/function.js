@@ -2,10 +2,10 @@ var thisContent = '';
 
 function loadOffice(officeCode) {
     thisContent = 'office-list';
-    const xhttp = new XMLHttpRequest();
     setLoading('on')
+    const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
-        setLoading('off')
+        setLoading('off');
         document.getElementById("body-content").innerHTML = xhttp.responseText;
     }
     xhttp.open("GET", "office-list?officeCode=" + officeCode);
@@ -27,12 +27,16 @@ function loadProduct(page, pageSize = document.getElementById("itemsPage").value
 
 function setLoading(on_off) {
     let loading = document.getElementById("loading");
+    let cursorContent = document.getElementById("body-content")
     if (on_off == 'on') {
         loading.classList.remove("d-none");
         loading.classList.add("d-inline");
+        cursorContent.style.cursor = "progress"
+
     } else {
         loading.classList.remove("d-inline");
         loading.classList.add("d-none");
+        cursorContent.style.cursor = "auto"
     }
 }
 
@@ -47,7 +51,7 @@ function addToCart(productCode) {
         setLoading('off');
         cartInfo = document.getElementById("noOfItemInCart");
         noOfItem = xhttp.responseText;
-//                alert("Response = "+ noOfItem);
+        //alert("Response = " + noOfItem);
         if (noOfItem > 0) {
             cartInfo.style.display = 'inline'
         } else {
@@ -103,8 +107,10 @@ function login(userName, password) {
 
 function loadProduct(page, pageSize = document.getElementById("itemsPage").value) {
     //alert('page: '+ page + ", size: "+ pageSize)
+    setLoading('on');
     const xmlHttp = new XMLHttpRequest();
     xmlHttp.onload = function () {
+        setLoading('off');
         document.getElementById("body-content").innerHTML = xmlHttp.responseText;
     }
     xmlHttp.open("GET", "product-list?page=" + page + "&size=" + pageSize);

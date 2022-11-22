@@ -1,5 +1,5 @@
 <jsp:include page="login-form.html"/>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark text-light" style="position: fixed; width: 100%; z-index: 20;">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark text-light" style="position: fixed; width: 100%; z-index: 20;">
     <div class="container-fluid">
         <a class="navbar-brand text-warning" href="javascript:void(0)">Classic Model</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#classicModelsNav">
@@ -18,7 +18,7 @@
                 </li>
                 <li class="nav-item ml-4">
                     <a id="login-menu" class="nav-link text-light" href="javascript:showLoginForm()">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>
                 </li>
             </ul>
             <div style="margin-right: 20px">
@@ -37,5 +37,5 @@
         </div>
     </div>
 </nav>
-<div class="nav-space"></div>
+<%--//<div class="nav-space"></div>--%>
 <jsp:include page="login-form.html"/>

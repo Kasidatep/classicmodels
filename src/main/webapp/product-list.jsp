@@ -1,18 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>ProductList - ClassicModels</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/7e6e2fadf1.js"></script>
-    <link href="components/asset/style.css" rel="stylesheet">
-    <link href="components/function.js" rel="stylesheet">
-</head>
-<body>
+
 <div class="nav-space"></div>
 <div class="container">
     <div class="flex-product">
@@ -50,7 +37,7 @@
         <nav aria-label="paging">
             <ul class="pagination">
                 <li class="page-item ${page==1?"disabled":""}">
-                    <a class="page-link" onclick="loadProduct(page=${vs.count}, ${pageSize})">Previous</a>
+                    <a class="page-link" onclick="loadProduct(page=${page-1}, ${pageSize})">Previous</a>
                 </li>
                 <c:forEach begin="1" end="${totalPage}" varStatus="vs">
                     <c:choose>
@@ -67,9 +54,9 @@
                     </c:choose>
                 </c:forEach>
                 <li class="page-item ${page==totalPage?"disabled":""}">
-                    <a class="page-link" onclick="loadProduct(page=${vs.count}, ${pageSize})">Next</a>
+                    <a class="page-link" onclick="loadProduct(page=${page+1}, ${pageSize})">Next</a>
                 </li>
-                <a class="px-1 mx-2 div-link" onclick="loadProduct(page=${page>=totalPage?1:page+1}, ${pageSize})"></a>
+
                 <select id="itemsPage" class="form-select ml-2" onchange="loadProduct(1)">
                     <option value="5" ${pageSize==5?'selected':''}>5 Item/Page </option>
                     <option value="10" ${pageSize==10?'selected':''}>10 Item/Page </option>
@@ -80,6 +67,3 @@
             </ul>
     </div>
 </div>
-
-</body>
-</html>

@@ -8,7 +8,7 @@ body {
 }
 
 .nav-space{
-    height: 50px;
+    height: 0px;
 }
 .product-img {
     width: 240px;
@@ -60,5 +60,11 @@ p.details {
 }
 .load-center{
     position: fixed;
+}
 
+.page-link{
+    cursor: pointer;
+}
+#body-content{
+    top: -30px;
 }
