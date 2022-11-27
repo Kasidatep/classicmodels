@@ -1,7 +1,7 @@
 <jsp:include page="login-form.html"/>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light" style="position: fixed; width: 100%; z-index: 20;">
     <div class="container-fluid">
-        <a class="navbar-brand text-warning" href="javascript:void(0)">Classic Model</a>
+        <h3 class="navbar-brand text-warning text-bolder" href="javascript:void(0)"> <i class="fa fa-car" aria-hidden="true"></i> Classic Model</h3>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#classicModelsNav">
             MENU <i class="fa fa-bars" aria-hidden="true"></i> </span>
         </button>
@@ -37,5 +37,4 @@
         </div>
     </div>
 </nav>
-<%--//<div class="nav-space"></div>--%>
 <jsp:include page="login-form.html"/>

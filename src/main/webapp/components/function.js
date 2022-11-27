@@ -41,7 +41,8 @@ function setLoading(on_off) {
 }
 
 function search(page) {
-    alert('Search from: ' + page);
+    const search = document.getElementById("searchBox")
+    alert('Search from: ' + page + '=> ' + search);
 }
 
 function addToCart(productCode) {
