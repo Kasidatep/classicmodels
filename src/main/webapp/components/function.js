@@ -24,6 +24,17 @@ function loadProduct(page, pageSize = document.getElementById("itemsPage").value
     xhttp.open("GET", "product-list?page=" + page + "&size=" + pageSize);
     xhttp.send();
 }
+function loadHistory() {
+    thisContent = 'order-history';
+    setLoading('on')
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        setLoading('off');
+        document.getElementById("body-content").innerHTML = xhttp.responseText;
+    }
+    xhttp.open("GET", "history");
+    xhttp.send();
+}
 
 function setLoading(on_off) {
     let loading = document.getElementById("loading");
@@ -80,7 +91,7 @@ function showLoginForm() {
     $('#modalLoginForm').modal('show');
 }
 
-function login(userName, password) {
+function signin(userName, password) {
     if (userName == '' || password == '' || userName == undefined) {
         document.getElementById("login-message").innerHTML = "Invalid user name or password !!!";
     }
@@ -91,9 +102,10 @@ function login(userName, password) {
         setLoading('off');
         if (xhttp.status == 200) {
             $('#modalLoginForm').modal('hide');
-            document.getElementById("login-menu").innerHTML = "<i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Logout"
+            document.getElementById("login-menu").innerHTML = "<i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Sign out"
+            document.getElementById("login-menu").setAttribute("href","javascript:signout()")
         } else if (xhttp.status > 400) {
-            document.getElementById("login-message").innerHTML = "Wrong username or password !!!"
+            document.getElementById("login-message").innerHTML = "Wrong username or password !!!"+ xhttp.status
         } else {
             document.getElementById("login-message").innerHTML = xhttp.statusText;
         }
@@ -116,5 +128,16 @@ function loadProduct(page, pageSize = document.getElementById("itemsPage").value
         document.getElementById("body-content").innerHTML = xmlHttp.responseText;
     }
     xmlHttp.open("GET", "product-list?page=" + page + "&size=" + pageSize);
+    xmlHttp.send();
+}
+function signout() {
+    setLoading('on');
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.onload = function () {
+        setLoading('off');
+        document.getElementById("login-menu").innerHTML = "<i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Sign in"
+        document.getElementById("login-menu").setAttribute("href","javascript:showLoginForm()")
+    }
+    xmlHttp.open("POST", "sign-out");
     xmlHttp.send();
 }

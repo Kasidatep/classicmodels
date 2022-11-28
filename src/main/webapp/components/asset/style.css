@@ -9,7 +9,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     z-index: 2;
     height: 75%;
     top: 20%;
@@ -91,7 +91,3 @@ p.details {
 #body-content{
     top: 30px;
 }
-.403error-message {
-    margin-top: 20px;
-    margin-left: 30px;
-    }

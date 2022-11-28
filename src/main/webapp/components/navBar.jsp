@@ -14,7 +14,7 @@
                     <a class="nav-link" href="javascript:loadProduct(1,10)">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">Order History</a>
+                    <a class="nav-link" href="javascript:loadHistory()">Order History</a>
                 </li>
                 <li class="nav-item ml-4">
                     <a id="login-menu" class="nav-link text-light" href="javascript:showLoginForm()">
@@ -37,4 +37,6 @@
         </div>
     </div>
 </nav>
+
+<div class="nav-space"></div>
 <jsp:include page="login-form.html"/>
