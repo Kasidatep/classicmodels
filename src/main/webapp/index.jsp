@@ -19,6 +19,7 @@
 </head>
 <body>
 <jsp:include page="components/navBar.jsp"/>
+<%--<div class="nav-space"></div>--%>
 <div id="body-content">
     <jsp:include page="components/home-info.html"/>
 </div>

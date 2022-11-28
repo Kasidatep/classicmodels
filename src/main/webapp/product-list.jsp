@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <div class="nav-space"></div>
+<br>
 <div class="container">
     <div class="flex-product">
 <%--        //class="row pt-4 align-items-center">--%>

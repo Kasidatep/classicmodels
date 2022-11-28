@@ -8,11 +8,12 @@
         <class>sit.int202.classicmodels.entities.Office</class>
         <class>sit.int202.classicmodels.entities.Employee</class>
         <class>sit.int202.classicmodels.entities.Product</class>
+        <class>sit.int202.classicmodels.entities.Customer</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/classicmodels"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
-            <property name="jakarta.persistence.jdbc.password" value="kasidate"/>
+            <property name="jakarta.persistence.jdbc.password" value="mysql@sit"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
         </properties>
 

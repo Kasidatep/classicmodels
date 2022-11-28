@@ -41,8 +41,8 @@ function setLoading(on_off) {
 }
 
 function search(page) {
-    const search = document.getElementById("searchBox")
-    alert('Search from: ' + page + '=> ' + search);
+    const search = document.getElementById("searchBox").
+    alert('Search from: ' + page + '=> ' + search.value);
 }
 
 function addToCart(productCode) {
@@ -86,22 +86,23 @@ function login(userName, password) {
     }
     setLoading('on')
     const xhttp = new XMLHttpRequest();
+    //alert(xhttp.statusText)
     xhttp.onload = function () {
         setLoading('off');
         if (xhttp.status == 200) {
             $('#modalLoginForm').modal('hide');
-            document.getElementById("login-menu").innerHTML = "<i class='bi bi-box-arrow-left'></i> Logout"
+            document.getElementById("login-menu").innerHTML = "<i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Logout"
         } else if (xhttp.status > 400) {
-            document.getElementById("login-message").innerHTML = xhttp.statusText;
+            document.getElementById("login-message").innerHTML = "Wrong username or password !!!"
         } else {
-            document.getElementById("login-message").innerHTML = "Wrong user name or password !!!";
+            document.getElementById("login-message").innerHTML = xhttp.statusText;
         }
     }
     let urlEncodedData = "", urlEncodedDataPairs = [];
     urlEncodedDataPairs.push(encodeURIComponent("userName") + '=' + encodeURIComponent(userName));
     urlEncodedDataPairs.push(encodeURIComponent("password") + '=' + encodeURIComponent(password));
     urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
-    xhttp.open("POST", "login");
+    xhttp.open("POST", "auth");
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send(urlEncodedData);
 }
