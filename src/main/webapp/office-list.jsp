@@ -9,7 +9,8 @@
                 <div class="text-start">${office.city}, ${office.country} </div>
                 <div class="text-start"> <i class="fa fa-phone" aria-hidden="true"></i> ${office.phone}</div>
             </a>
-        </c:forEach></div>
+        </c:forEach>
+    </div>
     <br>
     <c:if test="${selected!=null}">
     <hr>

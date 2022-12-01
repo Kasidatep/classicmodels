@@ -32,7 +32,7 @@ function loadHistory() {
         setLoading('off');
         document.getElementById("body-content").innerHTML = xhttp.responseText;
     }
-    xhttp.open("GET", "history");
+    xhttp.open("POST", "history");
     xhttp.send();
 }
 
@@ -131,6 +131,7 @@ function loadProduct(page, pageSize = document.getElementById("itemsPage").value
     xmlHttp.send();
 }
 function signout() {
+    alert("sure")
     setLoading('on');
     const xmlHttp = new XMLHttpRequest();
     xmlHttp.onload = function () {
@@ -141,3 +142,16 @@ function signout() {
     xmlHttp.open("POST", "sign-out");
     xmlHttp.send();
 }
+
+function historydetail(orderNo){
+    setLoading('on')
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        setLoading('off');
+        document.getElementById("body-content").innerHTML = xhttp.responseText;
+    }
+    xhttp.open("GET", "history-order-detail?orderNo=" + orderNo);
+    xhttp.send();
+}
+
+

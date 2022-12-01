@@ -8,6 +8,12 @@
 /*}*/
 
 /* width */
+
+*{
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     z-index: 2;
@@ -90,4 +96,7 @@ p.details {
 }
 #body-content{
     top: 30px;
+}
+.order-title{
+    margin-right: 40px;
 }

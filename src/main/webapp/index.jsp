@@ -10,6 +10,9 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/7e6e2fadf1.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Noto+Sans+Thai:wght@100;300;400&display=swap" rel="stylesheet">
     <link href="components/asset/style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="components/asset/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="180x180" href="components/asset/favicon/apple-touch-icon.png">

@@ -10,7 +10,7 @@ import sit.int202.classicmodels.repositories.OrderRepository;
 
 import java.io.IOException;
 
-@WebServlet(name = "OrderHistoryServlet", value = "/OrderHistoryServlet")
+@WebServlet(name = "OrderHistoryServlet", value = "/history")
 public class OrderHistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,9 +21,11 @@ public class OrderHistoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Customer user = (Customer) session.getAttribute("user");
+        System.out.println(user.getCustomerNumber());
         OrderRepository order = new OrderRepository();
         request.setAttribute("orders", order.findByUserId(user.getCustomerNumber()));
-        getServletContext().getRequestDispatcher("/office-list.jsp").forward(request, response);
+        //request.setAttribute("orders", order.findAll());
+        getServletContext().getRequestDispatcher("/history.jsp").forward(request, response);
         System.out.println("OrderBy: "+user.getContactFirstName());
     }
 }

@@ -20,6 +20,7 @@
                     <a id="login-menu" class="nav-link text-light" href="javascript:showLoginForm()">
                         <i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>
                 </li>
+
             </ul>
             <div style="margin-right: 20px">
                 <button onclick="viewCart()" type="button" class="btn btn-outline-secondary position-relative"
