@@ -77,7 +77,7 @@
                                                                     pattern="dd MMMMMMMM yyyy"/>
                                                 </li>
                                                 <li><strong>Status:</strong>
-                                                    <span class="badge bg-${order.status=="Shipped"?"success":order.status=="Cancelled"?"danger":"warning"} rounded-pill">${order.status}</span>
+                                                    <span class="badge text-bg-${order.status=="Shipped"?"success":order.status=="Cancelled"?"danger":"warning"} rounded-pill">${order.status}</span>
                                                 </li>
                                             </ul>
                                         </div>
