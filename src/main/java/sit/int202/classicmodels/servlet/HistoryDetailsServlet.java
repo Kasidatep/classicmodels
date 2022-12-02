@@ -34,7 +34,7 @@ import java.util.List;
             }
             request.setAttribute("totalPrice",total);
             getServletContext().getRequestDispatcher("/history-detail.jsp").forward(request, response);
-            System.out.println("Order: "+1);
+            System.out.println("Detail Order: "+ orderNo);
         }
 
 

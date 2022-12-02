@@ -11,45 +11,64 @@
 
 <div class="nav-space"></div>
 <div class="container">
-    <br>
-    <h2>Classic Model Order History ::</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Order History</li>
+        </ol>
+    </nav>
+    <h2>Classic Model Order History::</h2>
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+        <tr>
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Shipped date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+<c:forEach varStatus="no" var="order" items="${orders}">
+        <tr>
 
-    <ol class="list-group list-group-numbered">
-        <c:forEach varStatus="no" var="order" items="${orders}">
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold h4">Order Number: ${order.orderNumber}</div>
-                    <div class="row h6">
-                        <div class="col-6">
-                            Order date:
-                            <span>
+            <td>
+                <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">Order: #${order.orderNumber}</p>
+                        <p class="text-muted mb-0">${user.customerName}</p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <span>
                             <c:set var="now" value="${order.orderDate}" />
                             <fmt:parseDate value = "${now}" var = "parsedEmpDate" pattern = "yyyy-MM-dd" />
                             <fmt:setLocale value="en"/>
                             <fmt:formatDate value="${parsedEmpDate}"  pattern="dd MMMMMMMM yyyy"/>
-                            </span>
-                        </div>
-                        <div class="col-6">
-                            Shipped date:
-                            <span>
+                </span>
+            </td>
+            <td>
+                <span>
                             <c:set var="shippedDate" value="${order.shippedDate}" />
                             <fmt:parseDate value = "${shippedDate}" var = "parsedEmpDateshippedDate" pattern = "yyyy-MM-dd" />
                             <fmt:setLocale value="en"/>
                             <fmt:formatDate value="${parsedEmpDateshippedDate}"  pattern="dd MMMMMMMM yyyy"/>
-                            </span>
-                        </div>
-                        <div class="col-4">
-                            <div class="h6"><a onclick="historydetail('${order.orderNumber}')" class="text-primary">Details >> </a></div>
-                        </div>
-<%--                        <div>--%>
-<%--                            <c:forEach items="${order.orderDetails}" var="product">--%>
-<%--                                - ${product.productCode} <br>--%>
-<%--                            </c:forEach>--%>
-<%--                        </div>--%>
-                </div>
-                </div>
-                <h4 class="h4 badge bg-${order.status=="Shipped"?"success":order.status=="Cancelled"?"danger":"warning"} rounded-pill">${order.status}</h4>
-            </li>
-        </c:forEach>
-    </ol>
+                </span>
+            </td>
+            <td>
+                <span class="badge text-bg-${order.status=="Shipped"?"success":order.status=="Cancelled"?"danger":"warning"} rounded-pill">${order.status}</span>
+            </td>
+
+            <td>
+                <button type="button" onclick="historydetail('${order.orderNumber}')" class="btn btn-link btn-sm btn-rounded">
+                    View details
+                </button>
+            </td>
+        </tr>
+</c:forEach>
+        </tbody>
+    </table>
+
+
 </div>

@@ -131,7 +131,6 @@ function loadProduct(page, pageSize = document.getElementById("itemsPage").value
     xmlHttp.send();
 }
 function signout() {
-    alert("sure")
     setLoading('on');
     const xmlHttp = new XMLHttpRequest();
     xmlHttp.onload = function () {

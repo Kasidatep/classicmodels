@@ -12,13 +12,20 @@
     <script src="https://use.fontawesome.com/7e6e2fadf1.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Noto+Sans+Thai:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Noto+Sans+Thai:wght@100;300;400&display=swap"
+          rel="stylesheet">
     <link href="components/asset/style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="components/asset/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="180x180" href="components/asset/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="components/asset/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="components/asset/favicon/favicon-16x16.png">
     <link rel="manifest" href="components/asset/favicon/site.webmanifest">
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://printjs-4de6.kxcdn.com/print.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
 </head>
 <body>
 <jsp:include page="components/navBar.jsp"/>
@@ -27,7 +34,8 @@
     <jsp:include page="components/home-info.html"/>
 </div>
 <div class="d-flex justify-content-center modal d-none" id="loading">
-    <button class="btn" type="button" disabled style="margin-top: 10%; width: 6rem; height: 8rem; background-color: white">
+    <button class="btn" type="button" disabled
+            style="margin-top: 10%; width: 6rem; height: 8rem; background-color: white">
         <span class="spinner-border spinner-border-lg text-dark" role="status" aria-hidden="true"
               style="margin-top: 10%; width: 4rem; height: 4rem;"></span>
         <span class="">Loading...</span>
@@ -56,9 +64,13 @@
             <p>© 2022 KasidatePLUS, All rights reserved.</p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-dark" href="./"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                <li class="ms-3"><a class="link-dark" href="http://fb.kasp.social"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-                <li class="ms-3"><a class="link-dark" href="http://github.kasp.codes"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                <li class="ms-3"><a class="link-dark" style="text-decoration: none" href="https://kasidate.me"><i class="fa fa-at" aria-hidden="true"></i>KASIDATE.ME</a></li>
+                <li class="ms-3"><a class="link-dark" href="http://fb.kasp.social"><i class="fa fa-facebook-square"
+                                                                                      aria-hidden="true"></i></a></li>
+                <li class="ms-3"><a class="link-dark" href="http://github.kasp.codes"><i class="fa fa-github"
+                                                                                         aria-hidden="true"></i></a>
+                </li>
+                <li class="ms-3"><a class="link-dark" style="text-decoration: none" href="https://kasidate.me"><i
+                        class="fa fa-at" aria-hidden="true"></i>KASIDATE.ME</a></li>
             </ul>
         </div>
     </footer>
