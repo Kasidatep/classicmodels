@@ -15,8 +15,8 @@ public class ProductListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductRepository productRepository = new ProductRepository();
         int page = (request.getParameter("page")==null)?1: Integer.parseInt(request.getParameter("page"));
-        int size = (request.getParameter("size")==null)? productRepository.getSize(): Integer.parseInt(request.getParameter("size"));
-        int itemCount =  productRepository.countAll();
+        int size = (request.getParameter("size")==null)?productRepository.getSize():Integer.parseInt(request.getParameter("size"));
+        int itemCount = productRepository.countAll();
         int totalPage = itemCount/size + (itemCount%size==0 ? 0 : 1) ;
         List<Product> productList =  productRepository.findAll(page, size);
         request.setAttribute("products", productList);

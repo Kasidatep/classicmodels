@@ -21,11 +21,12 @@ public class OrderHistoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Customer user = (Customer) session.getAttribute("user");
-        System.out.println(user.getCustomerNumber());
         OrderRepository order = new OrderRepository();
         request.setAttribute("orders", order.findByUserId(user.getCustomerNumber()));
-        //request.setAttribute("orders", order.findAll());
-        getServletContext().getRequestDispatcher("/history.jsp").forward(request, response);
-        System.out.println("OrderBy: "+user.getContactFirstName());
+        // request.setAttribute("orders", order.findAll());
+        // getServletContext().getRequestDispatcher("/history.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/orderhistory.jsp").forward(request, response);
+
+        System.out.println("OrderBy: "+user.getCustomerName());
     }
 }

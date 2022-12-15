@@ -33,7 +33,6 @@ public class OrderRepository {
         EntityManager em = getEntityManager();
         Query query = em.createNamedQuery("Order.FIND_ALL");
         List<Order> order = query.getResultList();
-
         em.close();
         return order;
     }

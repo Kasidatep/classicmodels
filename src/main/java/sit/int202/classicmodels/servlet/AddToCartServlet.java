@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import sit.int202.classicmodels.entities.Customer;
 import sit.int202.classicmodels.entities.Product;
 import sit.int202.classicmodels.models.Cart;
 import sit.int202.classicmodels.models.ClassicModelLineItem;
@@ -30,6 +31,12 @@ public class AddToCartServlet extends HttpServlet {
             cart.addItem(productCode, new ClassicModelLineItem(product));
         }
         response.getWriter().print(cart.getQuantity());
+        Customer user = (Customer) session.getAttribute("user");
+        System.out.println(
+        user.getCustomerName()
+            + " Cart: Add ["
+            + productCode
+            + "] Total Product: "+ cart.getQuantity());
     }
 
     @Override

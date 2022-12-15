@@ -3,12 +3,14 @@ package sit.int202.classicmodels.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @Table(name = "orders")
 @NamedQueries({
         @NamedQuery(name = "Order.FIND_BY_USER", query = "SELECT o FROM Order o WHERE o.customerNumber = :userId"),
@@ -24,6 +26,8 @@ public class Order {
     private String status;
     private String comments;
     private Integer customerNumber;
-    @OneToMany(mappedBy = "orderNumber")
+    @OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    @JoinColumn(name = "orderNumber")
+//    @OneToMany(mappedBy = "orderNumber")
     private List<OrderDetail> orderDetails;
 }

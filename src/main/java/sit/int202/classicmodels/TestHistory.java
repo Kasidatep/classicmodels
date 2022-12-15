@@ -10,17 +10,17 @@ import sit.int202.classicmodels.repositories.ProductRepository;
 import java.util.List;
 
 public class TestHistory {
-    public static void main(String[] args) {
-        OrderRepository repository = new OrderRepository();
-        List<Order> orders = repository.findByUserId(119);
-        for(Order order : orders){
-            System.out.println(order.getOrderNumber()+ ": " + order.getCustomerNumber());
-            List<OrderDetail> details = order.getOrderDetails();
-
-            for(OrderDetail detail : details){
-                System.out.println(" - detail: " + detail.getProductCode() + " Price:  "+detail.getQuantityOrdered()* detail.getPriceEach()+" USD");
-            }
-        }
-    }
+//    public static void main(String[] args) {
+//        OrderRepository repository = new OrderRepository();
+//        List<Order> orders = repository.findByUserId(119);
+//        for(Order order : orders){
+//            System.out.println(order.getOrderNumber()+ ": " + order.getCustomerNumber());
+//            List<OrderDetail> details = order.getOrderDetails();
+//
+//            for(OrderDetail detail : details){
+//              //  System.out.println(" - detail: " + detail.getProductCode() + " Price:  "+detail.getQuantityOrdered()* detail.getPriceEach()+" USD");
+//            }
+//        }
+//    }
 
 }

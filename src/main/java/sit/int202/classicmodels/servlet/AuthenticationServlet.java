@@ -33,6 +33,7 @@ public class AuthenticationServlet extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             } else {
                 request.getSession().setAttribute("user", customer);
+                System.out.println("sign in successfully, welcome " + customer.getCustomerName());
             }
         }
     }

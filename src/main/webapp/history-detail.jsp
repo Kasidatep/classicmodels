@@ -107,7 +107,7 @@
                                                 <tbody>
                                                 <c:forEach items="${orders.orderDetails}" var="item" varStatus="vs">
                                                     <tr>
-                                                        <td>${vs.count}: ${item.productCode} (Price: $
+                                                        <td>${vs.count}: ${item.product.productName} (Price: $
                                                             <fmt:formatNumber type="number" maxFractionDigits="2"
                                                                               minFractionDigits="2"
                                                                               value="${item.priceEach}"/>
@@ -188,7 +188,7 @@
     <br>
     <div class="text-center">
     <button type="button" onclick="printJS({ printable: 'invoice', type: 'html', header: 'Invoice #${orders.orderNumber}', scanStyles: 'true' })">
-        Print Form
+        Print Invoice
     </button>
 </div>
 </div>

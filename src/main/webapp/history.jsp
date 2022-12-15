@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Kasidatep
-  Date: 28/11/2565
-  Time: 16:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -62,10 +55,14 @@
 
             <td>
                 <button type="button" onclick="historydetail('${order.orderNumber}')" class="btn btn-link btn-sm btn-rounded">
-                    View details
+                    View Invoices
                 </button>
             </td>
         </tr>
+
+<%--    <c:forEach items="${order.orderDetails}" var="prod">--%>
+<%--        - ${prod.product.productName} <br>--%>
+<%--    </c:forEach>--%>
 </c:forEach>
         </tbody>
     </table>
