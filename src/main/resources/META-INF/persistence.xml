@@ -9,7 +9,7 @@
         <class>sit.int202.classicmodels.entities.Employee</class>
         <class>sit.int202.classicmodels.entities.Product</class>
         <class>sit.int202.classicmodels.entities.Customer</class>
-        <class>sit.int202.classicmodels.entities.Order</class>
+        <class>sit.int202.classicmodels.entities.e</class>
         <class>sit.int202.classicmodels.entities.OrderDetail</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

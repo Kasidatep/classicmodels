@@ -25,7 +25,7 @@ import java.util.List;
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String orderNo = request.getParameter("orderNo");
             OrderRepository order = new OrderRepository();
-
+            // find by @id
             request.setAttribute("orders", order.find(Integer.parseInt(orderNo)));
             Order orders =  order.find(Integer.parseInt(orderNo));
             double total = 0.00;
@@ -34,6 +34,7 @@ import java.util.List;
             }
             request.setAttribute("totalPrice",total);
             getServletContext().getRequestDispatcher("/history-detail.jsp").forward(request, response);
+
             System.out.println("Detail Order: "+ orderNo);
         }
 

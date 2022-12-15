@@ -24,6 +24,7 @@ public class Order {
     private String status;
     private String comments;
     private Integer customerNumber;
-    @OneToMany(mappedBy = "orderNumber")
+    @OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    @JoinColumn(name = "orderNumber")
     private List<OrderDetail> orderDetails;
 }

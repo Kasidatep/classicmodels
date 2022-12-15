@@ -66,6 +66,10 @@
                 </button>
             </td>
         </tr>
+
+<%--    <c:forEach items="${order.orderDetails}" var="prod">--%>
+<%--        - ${prod.product.productName} <br>--%>
+<%--    </c:forEach>--%>
 </c:forEach>
         </tbody>
     </table>

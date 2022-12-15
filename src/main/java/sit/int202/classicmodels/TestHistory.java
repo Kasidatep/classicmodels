@@ -18,7 +18,7 @@ public class TestHistory {
             List<OrderDetail> details = order.getOrderDetails();
 
             for(OrderDetail detail : details){
-                System.out.println(" - detail: " + detail.getProductCode() + " Price:  "+detail.getQuantityOrdered()* detail.getPriceEach()+" USD");
+              //  System.out.println(" - detail: " + detail.getProductCode() + " Price:  "+detail.getQuantityOrdered()* detail.getPriceEach()+" USD");
             }
         }
     }
