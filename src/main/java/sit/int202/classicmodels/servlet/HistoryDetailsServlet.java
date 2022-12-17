@@ -29,9 +29,9 @@ import java.util.List;
             request.setAttribute("orders", order.find(Integer.parseInt(orderNo)));
             Order orders =  order.find(Integer.parseInt(orderNo));
             double total = 0.00;
-//            for (OrderDetail orderDetail : orders.getOrderDetails()) {
-//               total +=  orderDetail.getQuantityOrdered() * orderDetail.getPriceEach();
-//            }
+            for (OrderDetail orderDetail : orders.getOrderDetails()) {
+               total +=  orderDetail.getQuantityOrdered() * orderDetail.getPriceEach();
+            }
             request.setAttribute("totalPrice",total);
             getServletContext().getRequestDispatcher("/history-detail.jsp").forward(request, response);
 

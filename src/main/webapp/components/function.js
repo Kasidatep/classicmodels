@@ -153,4 +153,13 @@ function historydetail(orderNo){
     xhttp.send();
 }
 
+function loadHomePage() {
+    setLoading('on');
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.onload = function () {
+        setLoading('off');
+        document.getElementById("body-content").innerHTML = `<jsp:include page="components/home-info.html"/>`;
+    }
+    xmlHttp.send();
+}
 

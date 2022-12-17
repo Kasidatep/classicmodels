@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<fmt:setLocale value="en"/>
 <div class="nav-space"></div>
 <div class="container">
     <nav aria-label="breadcrumb">
@@ -48,17 +48,13 @@
                         </td>
                         <td>
                 <span>
-                            <c:set var="now" value="${order.orderDate}" />
-                            <fmt:parseDate value = "${now}" var = "parsedEmpDate" pattern = "yyyy-MM-dd" />
-                            <fmt:setLocale value="en"/>
+                            <fmt:parseDate value = "${order.orderDate}" var = "parsedEmpDate" pattern = "yyyy-MM-dd" />
                             <fmt:formatDate value="${parsedEmpDate}"  pattern="dd MMMMMMMM yyyy"/>
                 </span>
                         </td>
                         <td>
                 <span>
-                            <c:set var="shippedDate" value="${order.shippedDate}" />
-                            <fmt:parseDate value = "${shippedDate}" var = "parsedEmpDateshippedDate" pattern = "yyyy-MM-dd" />
-                            <fmt:setLocale value="en"/>
+                            <fmt:parseDate value = "${order.shippedDate}" var = "parsedEmpDateshippedDate" pattern = "yyyy-MM-dd" />
                             <fmt:formatDate value="${parsedEmpDateshippedDate}"  pattern="dd MMMMMMMM yyyy"/>
                 </span>
                         </td>
@@ -102,21 +98,30 @@
                                                           value="${item.priceEach*item.quantityOrdered}"/>
                                     </td>
                                 </tr>
+
                             </c:forEach>
                             </tbody>
                             <tfoot>
                             <tr>
                                 <th colspan="2" class="text-end">Total:</th>
                                 <th class="text-end">$
+                                        <c:set var="total" value="${0}" />
+                                       <c:forEach var="item" items="${order.orderDetails}">
+                                        <c:set var="total" value="${total + item.priceEach*item.quantityOrdered}" />
+                                        </c:forEach>
                                     <fmt:formatNumber type="number" maxFractionDigits="2"
-                                                      minFractionDigits="2" value="${totalPrice}"/>
+                                                      minFractionDigits="2" value="${total}"/>
                                     USD
                                 </th>
                             </tr>
+                            <tr>
+                                <td colspan="3" class="text-start"><strong>Comment: </strong><br>
+                                    <div> ${order.comments==null?"-":order.comments}</div>
+                                </td>
+
+                            </tr>
                             </tfoot>
-
                         </table>
-
                     </div>
                 </div>
             </div>

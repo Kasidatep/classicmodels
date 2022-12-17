@@ -13,7 +13,7 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:loadHomePage()">Home</a></li>
             <li class="breadcrumb-item"><a href="javascript:loadHistory()">Order History</a></li>
             <li class="breadcrumb-item active" aria-current="page">Invoice #${orders.orderNumber}</li>
         </ol>

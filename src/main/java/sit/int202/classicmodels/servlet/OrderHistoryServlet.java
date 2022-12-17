@@ -27,6 +27,6 @@ public class OrderHistoryServlet extends HttpServlet {
         // getServletContext().getRequestDispatcher("/history.jsp").forward(request, response);
         getServletContext().getRequestDispatcher("/orderhistory.jsp").forward(request, response);
 
-        System.out.println("OrderBy: "+user.getCustomerName());
+        System.out.println("Order History: "+user.getCustomerName());
     }
 }
